@@ -1,1 +1,42 @@
-<p>report works!</p>
+<mat-form-field>
+    <mat-label>Usuarios</mat-label>
+    <mat-select [formControl]="usuariosSelect">
+      <mat-option *ngFor="let usuario of usuarios" [value]="usuario.idusuario">
+        {{usuario.idusuario}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <div class="container" fxLayout="row" fxLayoutAlign="center start">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
+      <table mat-table  [dataSource]="filtroEntrenamiento" class="mat-elevation-z8">
+  
+        <!-- REPETIR POR CADA ATRIBUTO DE LA INTERFAZ - INICIO -->
+
+        <ng-container matColumnDef="idregistro">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.idregistro}} </td>
+        </ng-container>
+        <!-- FIN -->
+        <ng-container matColumnDef="fecha_hora">
+          <th mat-header-cell *matHeaderCellDef> Fecha y Hora </th>
+          <td mat-cell *matCellDef="let element"> {{element.fecha_hora}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="usuario_idusuario">
+          <th mat-header-cell *matHeaderCellDef> Usuario ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.usuario_idusuario}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="repeticiones">
+          <th mat-header-cell *matHeaderCellDef> Repeticiones </th>
+          <td mat-cell *matCellDef="let element"> {{element.repeticiones}} </td>
+        </ng-container>
+  
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+    </div>
+  </div>

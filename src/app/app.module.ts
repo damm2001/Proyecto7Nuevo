@@ -14,6 +14,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from "@angular/flex-layout";
+//Importación del módulo 
+import { HttpClientModule } from  '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+
 
 
 
@@ -21,7 +25,6 @@ import { FlexLayoutModule } from "@angular/flex-layout";
   declarations: [
     AppComponent,
     MainComponent,
-    ReportComponent,
     AboutComponent,
     MenuComponent
   ],
@@ -34,7 +37,10 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatIconModule,
     MatToolbarModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule,
+    MatTableModule,
+    ReportComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
