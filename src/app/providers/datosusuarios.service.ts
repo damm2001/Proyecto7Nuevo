@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class DatosusuariosService {
 
   //Atributo URL
-  private URL: string = 'http://localhost:3000/rest/usuario/findAll/json';
+  private URL: string = 'https://restgym-production.up.railway.app/rest/usuario/findAll/json';
 
 
   //Inyección de dependencia del HttpClient
